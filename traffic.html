@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/particle-api-js@8/dist/particle.min.js"></script>
+    
+    <script>
+        var particle = new Particle();
+
+        const accessToken = 'access token';
+        const deviceId = 'device id';
+
+        function trafficLight(cmd) {
+            particle.callFunction({deviceId, name:'traffic', argument: cmd, auth:accessToken});
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Traffic light control</h1>
+    <p><button id="red" onclick="trafficLight('red')">red</button></p>
+    <p><button id="green" onclick="trafficLight('green')">green</button></p>
+    <p><button id="blue" onclick="trafficLight('blue')">blue</button></p>
+</body>
+
+</html>
